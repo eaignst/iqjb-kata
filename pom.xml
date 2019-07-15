@@ -8,6 +8,7 @@
     <modules>
         <module>decorator1</module>
         <module>decorator2</module>
+        <module>chainoresponsibility</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
