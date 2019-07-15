@@ -27,11 +27,11 @@ public class Film extends LibraryItem{
     @Override
     public void info() {
         System.out.println(this);
-        }
+    }
 
     @Override
     public String toString() {
-           return "Book{" + 
+           return "Film{" + 
                 "numberOfCopies=" + getNumberOfCopies() +
                 ", title=" + title + ", director=" + director + ", playTime=" + playTime + '}';
  
