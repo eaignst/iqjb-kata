@@ -9,7 +9,7 @@ package hu.iqjb2.builder;
  *
  * @author avincze
  */
-public class ComputerPart {
+public abstract class ComputerPart {
     private String name;
 
     public ComputerPart(String name) {
