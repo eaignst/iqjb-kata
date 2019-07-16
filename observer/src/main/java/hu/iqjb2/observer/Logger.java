@@ -11,12 +11,12 @@ package hu.iqjb2.observer;
  */
 public abstract class Logger {
     
-    public void info(String message){
+    public final void info(String message){
         log(message, "INFO");
         
     }
     
-    public void error(String message){
+    public final void error(String message){
          log(message, "ERROR");
     }
     
