@@ -10,7 +10,7 @@ package hu.iqjb2.strategy;
  * @author avincze
  */
 public class Validation {
-    public final boolean validate(String input){
+    public  boolean validate(String input){
         for (int i = 0; i < input.length(); i++) {
             if (!validationStrategy.check(input.charAt(i))) {
                 return false;

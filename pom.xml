@@ -11,6 +11,7 @@
         <module>chainoresponsibility</module>
         <module>templatemethod</module>
         <module>strategy</module>
+        <module>adapter</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
