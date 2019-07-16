@@ -5,7 +5,6 @@
  */
 package hu.iqjb2.adapter;
 
-import sun.java2d.pipe.SpanIterator;
 
 /**
  *

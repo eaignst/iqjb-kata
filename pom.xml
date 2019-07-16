@@ -12,6 +12,7 @@
         <module>templatemethod</module>
         <module>strategy</module>
         <module>adapter</module>
+        <module>builder</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

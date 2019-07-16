@@ -10,7 +10,7 @@ package hu.iqjb2.adapter;
  * @author avincze
  */
 public abstract class MyTriangle2 {
-      private double a, b,c, m;
+    private double a, b,c, m;
 
     public MyTriangle2(double a, double b, double c, double m) {
         this.a = a;
