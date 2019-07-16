@@ -13,6 +13,7 @@
         <module>strategy</module>
         <module>adapter</module>
         <module>builder</module>
+        <module>observer</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
