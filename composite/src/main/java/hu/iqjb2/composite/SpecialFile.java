@@ -41,6 +41,11 @@ public class SpecialFile extends FileSystemItem {
     public void setAttribute(String attribute) {
         this.attribute = attribute;
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visit(this);
+    }
     
     
     

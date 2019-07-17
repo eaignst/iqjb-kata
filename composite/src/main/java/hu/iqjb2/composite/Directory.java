@@ -37,5 +37,11 @@ public class Directory extends FileSystemItem{
     public void remove(FileSystemItem item){
         items.remove(item);
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visit(this);
+        items.forEach(item->item.accept(v));
+    }
     
 }

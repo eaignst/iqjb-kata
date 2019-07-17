@@ -13,6 +13,8 @@ public abstract class FileSystemItem {
     
     private String name;
     protected  static int INDENT = 0;
+    
+    public abstract void accept(Visitor v);
 
     public FileSystemItem(String name) {
         this.name = name;

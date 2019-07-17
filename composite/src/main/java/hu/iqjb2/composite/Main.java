@@ -24,7 +24,19 @@ public class Main {
         
         root.draw();
         
+        CountingVisitor cv = new CountingVisitor();
+        root.accept(cv);
+        System.out.println(cv);
         
+        
+        SpecialFile sf = new SpecialFile("sf1", 210, "ab");
+        sf.accept(cv);
+        
+        
+        
+        SummingVisitor sv = new SummingVisitor();
+        root.accept(sv);
+        System.out.println(sv);
 
     }
     

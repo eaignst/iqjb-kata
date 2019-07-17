@@ -30,6 +30,11 @@ public class RegularFile extends FileSystemItem{
     public void setSize(int size) {
         this.size = size;
     }
+
+    @Override
+    public void accept(Visitor v) {
+        v.visit(this);
+    }
     
     
     
