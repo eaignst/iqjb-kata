@@ -17,6 +17,7 @@
         <module>composite</module>
         <module>state</module>
         <module>functional</module>
+        <module>streams1</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
