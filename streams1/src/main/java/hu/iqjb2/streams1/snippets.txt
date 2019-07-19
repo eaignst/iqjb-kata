@@ -22,6 +22,8 @@ Trader raoul = new Trader("Raoul", "Cambridge");
         );
 
 
+https://docs.oracle.com/javafx/2/charts/bar-chart.htm#CIHJFHDE
+
 1. Frequency of word length
 2. Frequency of character
 3. Number of characters
