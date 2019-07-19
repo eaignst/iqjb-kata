@@ -5,6 +5,8 @@
  */
 package hu.iqjb2.measuring;
 
+import java.util.stream.Stream;
+
 /**
  *
  * @author avincze
@@ -17,6 +19,13 @@ public class Measuring {
             result+=i;
         }
         return result;
+    }
+    
+    
+     public static long sum2(long number){
+        return Stream.iterate(1L, i -> i + 1)
+                .limit(number)
+                .reduce(Long::sum).get();
     }
     
 }
