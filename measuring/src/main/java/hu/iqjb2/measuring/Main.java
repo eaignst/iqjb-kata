@@ -19,6 +19,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("sum1: " + measure(Measuring::sum1, 30_000_000L) + " ms");
         System.out.println("sum2: " + measure(Measuring::sum2, 30_000_000L) + " ms");
+        //System.out.println("sum2b: " + measure(Measuring::sum2b, 30_000_000L) + " ms");
+        
+        System.out.println("sum3: " + measure(Measuring::sum3, 30_000_000L) + " ms");
+        System.out.println("sum3b: " + measure(Measuring::sum3b, 30_000_000L) + " ms");
     }
         
     
