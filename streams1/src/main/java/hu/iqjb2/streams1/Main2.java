@@ -16,10 +16,10 @@ public class Main2 {
         CommandProcessor.INSTANCE.process(new Task2());
         CommandProcessor.INSTANCE.process(new Task3());
         CommandProcessor.INSTANCE.process(new Task456());
-        CommandProcessor.INSTANCE.process(new Task7("secure"));
-        CommandProcessor.INSTANCE.process(new Task8(4));
-        CommandProcessor.INSTANCE.process(new Task9());
-        CommandProcessor.INSTANCE.process(new Task10());
+        CommandProcessor.INSTANCE.process(new Task7().setWord("secure"));
+//        CommandProcessor.INSTANCE.process(new Task8(4));
+//        CommandProcessor.INSTANCE.process(new Task9());
+//        CommandProcessor.INSTANCE.process(new Task10());
     }
     
 }

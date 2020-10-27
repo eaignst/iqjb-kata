@@ -15,5 +15,9 @@ public enum CommandProcessor {
     public void process(Command command){
         command.execute();
     }
-    
+
+    public void processAndTest(Testable command){
+        command.test();
+    }
+
 }

@@ -9,8 +9,8 @@ package hu.iqjb2.streams1;
  *
  * @author avincze
  */
-public interface Command {
+public interface Testable {
     
-    void execute();
+    void test();
     
 }

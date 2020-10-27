@@ -6,6 +6,7 @@
 package hu.iqjb2.streams1;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -24,9 +25,14 @@ public class Task {
 
     public Task() {
         try {
-            this.lines = Files.lines(Paths.get("D:\\IQJB\\Trainings\\20190715\\streams1\\src\\main\\java\\hu\\iqjb2\\streams1\\dictionary.txt"));
+            this.lines = Files.lines(Paths.get("C:\\Users\\eaignst\\Development\\iqjb-20190715\\streams1\\src\\main\\java\\hu\\iqjb2\\streams1"
+                + "\\dictionary.txt"));
         } catch (IOException ex) {
             Logger.getLogger(Task.class.getName()).log(Level.SEVERE, null, ex);
-        }  
+        }
+    }
+
+    protected Stream<String> getLines() {
+        return lines;
     }
 }
