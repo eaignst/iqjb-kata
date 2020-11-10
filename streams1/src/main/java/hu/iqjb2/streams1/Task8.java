@@ -5,36 +5,49 @@
  */
 package hu.iqjb2.streams1;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
+import com.google.common.collect.ImmutableList;
+import org.hamcrest.Matchers;
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
+ * Anagram of "time" are "emit", "item", "mite"
  *
  * @author avincze
  */
-public class Task8 extends Task implements Command{
+public class Task8 extends Task implements Command, Testable {
 
     private int groupSize;
     
-    public Task8(int groupSize) {
-        this.groupSize = groupSize;
+    public Task8() {
+        this.groupSize = 4;
     }
 
-    
+    public Command setGroupSize(int groupSize) {
+        this.groupSize = groupSize;
+        return this;
+    }
+
     @Override
     public void execute() {
-        System.out.println("Task8");
-       
-        lines.collect(Collectors.groupingBy(w->order(w)))
-                .values().stream().filter(l->l.size() == groupSize)
-                .map(List::toString)
-                .forEach(System.out::println);
-        
+        System.out.println("Task8 - Anagram groups with a given number of items");
+
+        getAnagramGroups().forEach(System.out::println);
     }
-    
-    private String order(String s){
-        return s.chars().sorted().mapToObj(String::valueOf).collect(Collectors.joining());
+
+    private List<List<String>> getAnagramGroups() {
+        // TODO getLines().collect(...)
+        return ImmutableList.of(
+            ImmutableList.of("emit", "item", "mite", "time"),
+            ImmutableList.of("diet", "edit", "tide", "tied"));
+    }
+
+    @Test
+    public void test() {
+        List<List<String>> anagrams = getAnagramGroups();
+
+        Assert.assertThat(anagrams, Matchers.hasSize(17));
     }
 }

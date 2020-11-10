@@ -13,6 +13,7 @@ import org.junit.Test;
 import java.util.List;
 
 /**
+ * Anagram of "time" are "emit", "item", "mite"
  *
  * @author avincze
  */
@@ -28,7 +29,7 @@ public class Task7 extends Task implements Command, Testable {
     
     @Override
     public void execute() {
-        System.out.println("Task7 - Anagrams of a word '" + word + "' (TODO)");
+        System.out.println("Task7 - Anagrams of a word '" + word + "'");
         getAnagramsInDictionary().forEach(System.out::println);
     }
 

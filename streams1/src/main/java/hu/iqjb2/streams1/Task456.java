@@ -20,7 +20,7 @@ public class Task456 extends Task implements Command, Testable {
 
     @Override
     public void execute() {
-        System.out.println("Task456 - Anagrams of a word (TODO)");
+        System.out.println("Task456 - Anagrams of a word ");
         System.out.println(getStatisticsOfWords());
     }
 

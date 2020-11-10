@@ -22,7 +22,7 @@ public class Task3 extends Task implements Command, Testable {
 
     @Override
     public void execute() {
-        System.out.println("Task3 - Number of characters (TODO)");
+        System.out.println("Task3 - Number of characters ");
         System.out.println(getNumberOfCharacters());
     }
 
@@ -34,6 +34,6 @@ public class Task3 extends Task implements Command, Testable {
 
     @Test
     public void test() {
-        Assert.assertThat(getNumberOfCharacters(), Matchers.isOneOf(148278L));
+        Assert.assertThat(getNumberOfCharacters(), Matchers.isOneOf(148_278L));
     }
 }

@@ -5,30 +5,46 @@
  */
 package hu.iqjb2.streams1;
 
+import com.google.common.collect.ImmutableMap;
+import org.hamcrest.Matchers;
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
+ * Anagram of "time" are "emit", "item", "mite"
+ *
+ * Use Collectors.groupingBy and Collectors.counting()
  *
  * @author avincze
  */
-public class Task10 extends Task implements Command{
-
-    
+public class Task10 extends Task implements Command, Testable {
     
     @Override
     public void execute() {
-        System.out.println("Task10");
+        System.out.println("Task10 - Ratio of words with and without anagrams");
        
-        lines.collect(Collectors.groupingBy(s->order(s), Collectors.counting()))
-                .values().stream()
-                .collect(Collectors.groupingBy(c->c!=1, Collectors.counting()))
+        getRatioOfAnagrams()
                 .forEach((key, value)->System.out.println(key + ": " + value));
     }
-    
-    private String order(String s){
-        return s.chars().sorted().mapToObj(String::valueOf).collect(Collectors.joining());
+
+    private Map<Boolean, Long> getRatioOfAnagrams() {
+        return ImmutableMap.of(
+            true, 18_777L,
+            false, 36_999L);
+    }
+
+    @Test
+    public void test() {
+        Map<Boolean, Long> ratios = getRatioOfAnagrams();
+
+        Assert.assertThat(ratios.keySet(), Matchers.hasSize(2));
+        Assert.assertThat(ratios.get(false), Matchers.equalTo(18_313L));
+        Assert.assertThat(ratios.get(true), Matchers.equalTo(865L));
     }
 }

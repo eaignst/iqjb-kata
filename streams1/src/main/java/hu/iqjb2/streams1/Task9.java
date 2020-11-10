@@ -5,30 +5,43 @@
  */
 package hu.iqjb2.streams1;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.stream.Collectors;
+import com.google.common.collect.ImmutableMap;
+import org.hamcrest.Matchers;
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.util.Map;
 
 /**
+ * Anagram of "time" are "emit", "item", "mite"
  *
  * @author avincze
  */
-public class Task9 extends Task implements Command{
+public class Task9 extends Task implements Command, Testable {
 
     
     
     @Override
     public void execute() {
-        System.out.println("Task9");
+        System.out.println("Task9 - Frequency of anagram groups");
        
-        lines.collect(Collectors.groupingBy(s->order(s), Collectors.counting()))
-                .values().stream()
-                .collect(Collectors.groupingBy(c->c, Collectors.counting()))
+        getFrequencyOfAnagramGroups()
                 .forEach((key, value)->System.out.println(key + ": " + value));
     }
-    
-    private String order(String s){
-        return s.chars().sorted().mapToObj(String::valueOf).collect(Collectors.joining());
+
+    private Map<Long, Long> getFrequencyOfAnagramGroups() {
+        return ImmutableMap.of(
+            1L, 18_999L,
+            2L, 26_999L);
+    }
+
+    @Test
+    public void test() {
+        Map<Long, Long> frequencies = getFrequencyOfAnagramGroups();
+
+        Assert.assertThat(frequencies.keySet(), Matchers.hasSize(5));
+        Assert.assertThat(frequencies.get(1L), Matchers.equalTo(18_313L));
+        Assert.assertThat(frequencies.get(2L), Matchers.equalTo(768L));
+        Assert.assertThat(frequencies.get(3L), Matchers.equalTo(79L));
     }
 }
