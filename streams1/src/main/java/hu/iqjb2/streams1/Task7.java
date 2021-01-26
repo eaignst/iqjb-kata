@@ -40,8 +40,6 @@ public class Task7 extends Task implements Command, Testable {
     @Test
     public void test() {
         this.word = "secure";
-        List<String> anagrams = getAnagramsInDictionary();
-
-        Assert.assertThat(anagrams, Matchers.isOneOf("rescue"));
+        Assert.assertTrue(getAnagramsInDictionary().contains("rescue"));
     }
 }
